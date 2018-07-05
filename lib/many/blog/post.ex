@@ -6,6 +6,7 @@ defmodule Many.Blog.Post do
   schema "posts" do
     field :content, :string
     field :title, :string
+
     belongs_to :user, Many.Accounts.User
 
     timestamps()
