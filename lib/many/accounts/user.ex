@@ -2,11 +2,10 @@ defmodule Many.Accounts.User do
   use Ecto.Schema
   import Ecto.Changeset
 
-
   schema "users" do
-    field :name, :string
+    field(:name, :string)
 
-    has_many :posts, Many.Blog.Post
+    has_many(:posts, Many.Blog.Post)
 
     timestamps()
   end
@@ -16,6 +15,7 @@ defmodule Many.Accounts.User do
     user
     |> cast(attrs, [:name])
     |> validate_required([:name])
+
     # |> cast_assoc(:posts)
   end
 end

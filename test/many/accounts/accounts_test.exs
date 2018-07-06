@@ -41,7 +41,7 @@ defmodule Many.AccountsTest do
     test "update_user/2 with valid data updates the user" do
       user = user_fixture()
       assert {:ok, %User{} = user} = Accounts.update_user(user, @update_attrs)
-      
+
       assert user.name == "some updated name"
     end
 

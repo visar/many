@@ -11,7 +11,7 @@ defmodule Many.Application do
       # Start the Ecto repository
       Many.Repo,
       # Start the endpoint when the application starts
-      ManyWeb.Endpoint,
+      ManyWeb.Endpoint
       # Starts a worker by calling: Many.Worker.start_link(arg)
       # {Many.Worker, arg},
     ]

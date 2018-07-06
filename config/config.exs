@@ -14,8 +14,7 @@ config :many, ManyWeb.Endpoint,
   url: [host: "localhost"],
   secret_key_base: "r3g6iSHrV9gWwLnEttYDcwimPi8DfYBsTtQEB0GhaP25taRtScNI2TND3C0kUVm4",
   render_errors: [view: ManyWeb.ErrorView, accepts: ~w(html json)],
-  pubsub: [name: Many.PubSub,
-           adapter: Phoenix.PubSub.PG2]
+  pubsub: [name: Many.PubSub, adapter: Phoenix.PubSub.PG2]
 
 # Configures Elixir's Logger
 config :logger, :console,
@@ -26,7 +25,6 @@ config :logger, :console,
 config :phoenix, :json_library, Jason
 config :ecto, :json_library, Jason
 
-
 # Import environment specific config. This must remain at the bottom
 # of this file so it overrides the configuration defined above.
-import_config "#{Mix.env}.exs"
+import_config "#{Mix.env()}.exs"

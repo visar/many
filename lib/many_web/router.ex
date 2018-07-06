@@ -14,7 +14,8 @@ defmodule ManyWeb.Router do
   end
 
   scope "/", ManyWeb do
-    pipe_through :browser # Use the default browser stack
+    # Use the default browser stack
+    pipe_through :browser
 
     get "/", PageController, :index
     resources "/users", UserController

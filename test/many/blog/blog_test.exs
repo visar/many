@@ -42,7 +42,7 @@ defmodule Many.BlogTest do
     test "update_post/2 with valid data updates the post" do
       post = post_fixture()
       assert {:ok, %Post{} = post} = Blog.update_post(post, @update_attrs)
-      
+
       assert post.content == "some updated content"
       assert post.title == "some updated title"
     end

@@ -2,12 +2,11 @@ defmodule Many.Blog.Post do
   use Ecto.Schema
   import Ecto.Changeset
 
-
   schema "posts" do
-    field :content, :string
-    field :title, :string
+    field(:content, :string)
+    field(:title, :string)
 
-    belongs_to :user, Many.Accounts.User
+    belongs_to(:user, Many.Accounts.User)
 
     timestamps()
   end
