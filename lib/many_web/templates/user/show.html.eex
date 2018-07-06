@@ -7,6 +7,11 @@
     <%= @user.name %>
   </li>
 
+  <%= for post <- @user.posts do %>
+  <li>
+    <%= post.title %>
+  </li>
+  <% end %>
 </ul>
 
 <span><%= link "Edit", to: Routes.user_path(@conn, :edit, @user) %></span>
