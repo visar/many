@@ -1,6 +1,7 @@
 defmodule Many.Accounts.User do
   use Ecto.Schema
   import Ecto.Changeset
+  alias Many.Blog.Post
 
   schema "users" do
     field(:name, :string)
@@ -15,6 +16,7 @@ defmodule Many.Accounts.User do
     user
     |> cast(attrs, [:name])
     |> validate_required([:name])
+    |> Ecto.Changeset.cast_assoc(:posts, with: &Post.changeset/2)
 
     # |> cast_assoc(:posts)
   end
