@@ -4,7 +4,6 @@ defmodule Many.Blog.Post do
 
   schema "posts" do
     field(:content, :string)
-    field(:title, :string)
 
     belongs_to(:user, Many.Accounts.User)
 
@@ -14,7 +13,7 @@ defmodule Many.Blog.Post do
   @doc false
   def changeset(post, attrs) do
     post
-    |> cast(attrs, [:title, :content])
-    |> validate_required([:title, :content])
+    |> cast(attrs, [:content])
+    |> validate_required([:content])
   end
 end

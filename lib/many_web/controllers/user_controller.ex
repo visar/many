@@ -10,7 +10,7 @@ defmodule ManyWeb.UserController do
   end
 
   def new(conn, _params) do
-    changeset = Accounts.change_user(%User{posts: [%Many.Blog.Post{}]})
+    changeset = Accounts.change_user(%User{})
     render(conn, "new.html", changeset: changeset)
   end
 
@@ -38,6 +38,7 @@ defmodule ManyWeb.UserController do
   end
 
   def update(conn, %{"id" => id, "user" => user_params}) do
+    user_params = Map.put_new(user_params, "content", nil)
     user = Accounts.get_user!(id)
 
     case Accounts.update_user(user, user_params) do

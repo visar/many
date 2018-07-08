@@ -9,7 +9,7 @@
 
   <%= for post <- @user.posts do %>
   <li>
-    <%= post.title %>
+    <%= post.content %>
   </li>
   <% end %>
 </ul>

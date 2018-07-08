@@ -40,6 +40,7 @@ defmodule ManyWeb do
       use Phoenix.HTML
 
       import ManyWeb.ErrorHelpers
+      import ManyWeb.InputHelpers
       import ManyWeb.Gettext
       alias ManyWeb.Router.Helpers, as: Routes
     end
